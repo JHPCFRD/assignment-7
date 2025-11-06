@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jokebook</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="app-container">
+        <h1>Jokebook</h1>
+        
+        <section id="random-joke-section">
+            <h2>Random Joke</h2>
+            <div id="random-joke-container">
+                <p id="random-joke-setup"></p>
+                <p id="random-joke-delivery"></p>
+                <button id="refresh-random-joke">Another Joke</button>
+            </div>
+        </section>
+
+        <section id="categories-section">
+            <h2>Joke Categories</h2>
+            <button id="load-categories">Load Categories</button>
+            <div id="categories-container"></div>
+        </section>
+
+        <section id="search-section">
+            <h2>Search Jokes by Category</h2>
+            <div id="search-form">
+                <input type="text" id="category-search" placeholder="Enter category name">
+                <input type="number" id="joke-limit" placeholder="Limit" min="1">
+                <button id="search-jokes">Search Jokes</button>
+            </div>
+            <div id="search-results"></div>
+        </section>
+
+        <section id="add-joke-section">
+            <h2>Add a New Joke</h2>
+            <form id="add-joke-form">
+                <input type="text" id="joke-category" placeholder="Category" required>
+                <textarea id="joke-setup" placeholder="Setup" required></textarea>
+                <textarea id="joke-delivery" placeholder="Punchline" required></textarea>
+                <button type="submit">Add Joke</button>
+            </form>
+            <div id="add-joke-results"></div>
+        </section>
+    </div>
+</body>
+</html>

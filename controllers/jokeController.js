@@ -1,5 +1,4 @@
-const { getRandomValues } = require('crypto');
-const jokeModel = require('../models/jokeMOdel');
+const jokeModel = require('../models/jokeModel');
 
 async function getCategories(req, res) {
     try {
@@ -19,10 +18,10 @@ async function getJokesByCategory(req, res) {
         if (req.query.limit) {
             limit = parseInt(req.query.limit);
         }
-        const jokes = await jokeModel.getJokeByCategory(category, limit);
+        const jokes = await jokeModel.getJokesByCategory(category, limit);
 
         if (jokes.length === 0) {
-            return res.status(404).json({ error: 'No jokes found: $(category}' });
+            return res.status(404).json({ error: `No jokes found: ${category}` });
         }
 
         res.json(jokes);
